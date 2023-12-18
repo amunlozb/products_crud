@@ -357,6 +357,23 @@ body aside#sidebar {
   background-color: #f0f0f0;
 }
 
+body aside#sidebar .sidebar-promo {
+  background: #c4c5fd;
+  box-shadow: inset 28px 28px 45px #7d7de4, inset -28px -28px 45px #c397d4;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+body aside#sidebar .sidebar-promo-text h3 {
+  font-size: 25px;
+}
+body aside#sidebar .sidebar-promo-text h6 {
+  font-size: 13px;
+}
+
 @media only screen and (max-width: 768px) {
   footer #footer {
     padding: 10px 10px;
