@@ -1,0 +1,168 @@
+<!-- catalogo.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAW2 - AML</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+    <!-- el script es para los iconos (como el del carrito) -->
+    <script
+      src="https://kit.fontawesome.com/0e53af926d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="catalog">
+    <!--header-->
+    <header>
+      <div id="header">
+        <div class="header-logo">
+          <a href="layout_principal.html"><img class="logo" src="{% static 'img/coffee-logo.png' %}" alt="logo" /></a>
+        </div>
+        <div class="header-list">
+          <nav class="header-list-nav">
+            <ul>
+              <li><a href="../">Inicio</a></li>
+              <li><a class="active" href="/catalog">Catálogo</a></li>
+              <li><a href="../login">Registro</a></li>
+              <li><a href="#">Sobre Nosotros</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--sidebar -->
+<aside id="sidebar">
+  <section class="filter-section">
+    <h2>Filtros</h2>
+
+    <!-- Categories -->
+    <div class="category-filter">
+      <h3>Categorías</h3>
+      <label><input type="radio" name="category" value="all" checked>Todas</label>
+      <label><input type="radio" name="category" value="espresso">Espresso</label>
+      <label><input type="radio" name="category" value="latte">Latte</label>
+      <label><input type="radio" name="category" value="snacks">Snacks</label>
+    </div>
+
+    <!-- Price Range -->
+    <div class="price-filter">
+      <h3>Rango de precio</h3>
+      <label for="min-price">Precio mínimo:</label>
+      <input type="range" id="min-price" name="min-price" min="0" max="100" value="0">
+      <span id="min-price-display">$0</span>
+
+      <label for="max-price">Precio máximo:</label>
+      <input type="range" id="max-price" name="max-price" min="0" max="100" value="100">
+      <span id="max-price-display">$100</span>
+    </div>
+
+    <!-- Ratings -->
+    <div class="ratings-filter">
+      <h3>Valoración</h3>
+      <label><input type="radio" name="rating" value="1">1 estrella</label>
+      <label><input type="radio" name="rating" value="2">2 estrellas</label>
+      <label><input type="radio" name="rating" value="3">3 estrellas</label>
+      <label><input type="radio" name="rating" value="4">4 estrellas</label>
+      <label><input type="radio" name="rating" value="5">5 estrellas</label>
+    </div>
+  </section>
+</aside>
+
+
+    <!--main -->
+
+    {% block content %}
+  <main>
+    <!-- catalogo -->
+    <section class="product-section" class="section-p1">
+      <div class="catalog-header">
+        <h1>Productos Destacados</h1>
+        <p>Nuevas fórmulas de café 100% ecológicas</p>
+      </div>
+      <div class="cards-section">
+        {% for product in products %}
+          <div class="product-card">
+            <img src="{% static 'img/products/product-img' %}{{ forloop.counter }}.jpeg" alt="product image" />
+            <span>{{ product.brand }}</span>
+            <h4>{{ product.name }}</h4>
+
+            <!-- loop through star amount-->
+            <div class="stars">
+                {% for _ in product.get_star_range %}
+                    <i class="fa-solid fa-star"></i>
+                {% endfor %}
+            </div>
+            <h4 class="price">{{ product.price }}</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+    <!--footer -->
+
+    <footer>
+      <div id="footer">
+        <div class="contact">
+          <h3>Contacto</h3>
+          <address>
+            <p><b>Dirección:</b> Calle Alixar, Numero 38. Sevilla</p>
+            <p><b>Teléfono:</b> +34 666 777 888</p>
+            <p><b>Horas</b> 09:00 - 17:00. Lunes - Viernes</p>
+          </address>
+          <h3>Siguenos</h3>
+          <br>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h3>Información</h3>
+          <br>
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Información de entregas</a>
+          <a href="#">Acuerdo de Privacidad</a>
+          <a href="#">Terminos y Condiciones</a>
+          <a href="#">Contacta con nosotros</a>
+        </div>
+        <div class="myaccount ">
+          <h3>Cuenta</h3>
+          <br>
+          <a href="#">Registrarse</a>
+          <a href="#">Ver carrito</a>
+          <a href="#">Lista de deseados</a>
+          <a href="#">Rastrea mi pedido</a>
+          <a href="#">Ayuda</a>
+        </div>
+
+
+        <section id="newsletter">
+        <div class="newsletter-text">
+          <h3>Registrate a nuestra Newsletter</h3>
+          <h5>Infórmate a traves de emails sobre nuestras <span>ofertas especiales</span></h5>
+        </div>
+        <div class="form">
+          <input type="email" placeholder="Tu correo electrónico" id="email-address-input">
+          <button>Registrarse</button>
+        </div>
+      </section>
+
+      </div>
+    </footer>
+
+  </body>
+</html>

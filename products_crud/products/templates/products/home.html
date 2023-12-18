@@ -1,0 +1,142 @@
+<!-- layout_principal.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAW2 - AML</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />-
+
+    <script
+      src="https://kit.fontawesome.com/0e53af926d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="home">
+    <!--header-->
+    <header>
+      <div id="header">
+        <div class="header-logo">
+          <a href="layout_principal.html"><img class="logo" src="{% static 'img/coffee-logo.png' %}" alt="logo" /></a>
+        </div>
+        <div class="header-list">
+          <nav class="header-list-nav">
+            <ul>
+              <li><a class="active" href="/">Inicio</a></li>
+              <li><a href="catalog">Catálogo</a></li>
+              <li><a href="../login">Registro</a></li>
+              <li><a href="#">Sobre Nosotros</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--main -->
+
+    <main>
+      <section id="hero" style="background-image: url('{% static 'img/coffe-banner.png' %}');">
+        <h4>¡No te la pierdas!</h4>
+        <h2>Nuestra nueva colección</h2>
+        <h1>Aqua Blue</h1>
+        <p>Ahorra hasta un 70% al comprar 4 unidades de la misma colección</p>
+        <button style="background-color: transparent; background-image: url('{% static 'img/button.png' %}')">Compra ahora</button>
+      </section>
+      
+      <section id="off-banner" class="section-m1" style="background-image: url('{% static 'img/banner/promo-banner.png' %}');">
+        <h4>Oferta de Liquidación</h4>
+        <h2>Hasta un 70% de descuento - Todos los cafés</h2>
+        <button class="normal">Explora más</button>
+      </section>
+      
+      <section id="features" class="section-p1">
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-mail.png' %}" alt="free shipping" />
+        <h6>Envio gratis</h6>
+    </div>
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-graph.png' %}" alt="online order" />
+        <h6>Pedido online</h6>
+    </div>
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-chart.png' %}" alt="save money" />
+        <h6>Ofertas</h6>
+    </div>
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-person.png' %}" alt="promotions" />
+        <h6>Promociones</h6>
+    </div>
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-clock.png' %}" alt="happy sell" />
+        <h6>Tratos</h6>
+    </div>
+    <div class="f-box">
+        <img src="{% static 'img/features/feature-laptop.png' %}" alt="24/7 support" />
+        <h6>Soporte 24/7</h6>
+    </div>
+</section>
+
+    </main>
+
+    <!--footer -->
+
+    <footer>
+      <div id="footer">
+        <div class="contact">
+          <h3>Contacto</h3>
+          <address>
+            <p><b>Dirección:</b> Calle Alixar, Numero 38. Sevilla</p>
+            <p><b>Teléfono:</b> +34 666 777 888</p>
+            <p><b>Horas</b> 09:00 - 17:00. Lunes - Viernes</p>
+          </address>
+          <h3>Siguenos</h3>
+          <br> 
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h3>Información</h3>
+          <br> 
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Información de entregas</a>
+          <a href="#">Acuerdo de Privacidad</a>
+          <a href="#">Terminos y Condiciones</a>
+          <a href="#">Contacta con nosotros</a>
+        </div>
+        <div class="myaccount ">
+          <h3>Cuenta</h3>
+          <br> 
+          <a href="#">Registrarse</a>
+          <a href="#">Ver carrito</a>
+          <a href="#">Lista de deseados</a>
+          <a href="#">Rastrea mi pedido</a>
+          <a href="#">Ayuda</a>
+        </div>
+
+
+        <section id="newsletter">
+        <div class="newsletter-text">
+          <h3>Registrate a nuestra Newsletter</h3>
+          <h5>Infórmate a traves de emails sobre nuestras <span>ofertas especiales</span></h5>
+        </div>
+        <div class="form">
+          <input type="email" placeholder="Tu correo electrónico" id="email-address-input">
+          <button>Registrarse</button>
+        </div>
+      </section>
+        
+      </div>
+    </footer>
+
+  </body>
+</html>
